@@ -115,7 +115,7 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeCartModal()">&times;</span>
             <h2>سلة الطلبات</h2>
-            
+
             <div id="cart-items-container">
                 <!-- العناصر المضافة ستظهر هنا -->
             </div>
@@ -126,12 +126,17 @@
                     <label for="customer-name">الاسم الكامل <span style="color: red;">*</span></label>
                     <input type="text" id="customer-name" placeholder="أدخل اسمك هنا..." required>
                 </div>
-                
+
                 <div class="input-group">
                     <label for="customer-phone">رقم الهاتف <span style="color: red;">*</span></label>
                     <input type="tel" id="customer-phone" placeholder="077XXXXXXXX" required>
                 </div>
-                
+
+                <div class="form-group">
+                    <label for="customer-address">العنوان الكامل <span class="required-star">*</span></label>
+                    <input type="text" id="customer-address" placeholder="المنطقة، الشارع، أقرب نقطة دالة" required>
+                </div>
+
             </div>
 
             <!-- حقل الملاحظة العامة للطلب -->
@@ -155,9 +160,12 @@
                 <h3>Master Chefs</h3>
                 <p>تجربة مميزة في كل وجبة</p>
                 <div class="social-links">
-                    <a href="https://wa.me/9647750507632" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/ahm_th1?igsh=cnVtdjM2MXA0dHY=" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/ahmed-thamer-047982381" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/9647750507632" target="_blank" title="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/ahm_th1?igsh=cnVtdjM2MXA0dHY=" target="_blank"
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmed-thamer-047982381" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
@@ -178,7 +186,8 @@
             </div>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
+
 </html>

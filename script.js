@@ -91,24 +91,70 @@ function scrollToTop() {
 // ==========================================================================
 // 2. إرسال الطلب عبر الواتساب (WhatsApp Order)
 // ==========================================================================
+// function sendOrderToWhatsApp() {
+//     if (cart.length === 0) {
+//         alert("سلة الطلبات فارغة!");
+//         return;
+//     }
+
+//     const name = document.getElementById('customer-name').value.trim();
+//     const phone = document.getElementById('customer-phone').value.trim();
+//     const note = document.getElementById('general-note').value.trim();
+
+//     if (!name || !phone) {
+//         alert("يرجى إدخال الاسم الكامل ورقم الهاتف!");
+//         return;
+//     }
+
+//     let message = `طلب جديد من المنيو\n\n`;
+//     message += `اسم الزبون: ${name}\n`;
+//     message += `رقم الهاتف: ${phone}\n`;
+//     if (note) message += `ملاحظات: ${note}\n`;
+//     message += `\nالطلبات:\n`;
+
+//     let total = 0;
+//     cart.forEach(item => {
+//         const itemTotal = item.price * item.quantity;
+//         total += itemTotal;
+//         message += `- ${item.name} (${item.quantity}) = ${itemTotal.toLocaleString()} د.ع\n`;
+//     });
+
+//     message += `\nالمجموع الكلي: ${total.toLocaleString()} د.ع`;
+
+//     const whatsappNumber = "9647700000000"; 
+//     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+//     window.open(url, '_blank');
+// }
+
+// ==========================================================================
+// 2. إرسال الطلب عبر الواتساب مع العنوان (WhatsApp Order with Address)
+// ==========================================================================
 function sendOrderToWhatsApp() {
     if (cart.length === 0) {
         alert("سلة الطلبات فارغة!");
         return;
     }
 
-    const name = document.getElementById('customer-name').value.trim();
-    const phone = document.getElementById('customer-phone').value.trim();
-    const note = document.getElementById('general-note').value.trim();
+    const nameInput = document.getElementById('customer-name');
+    const phoneInput = document.getElementById('customer-phone');
+    const addressInput = document.getElementById('customer-address');
+    const noteInput = document.getElementById('general-note');
 
-    if (!name || !phone) {
-        alert("يرجى إدخال الاسم الكامل ورقم الهاتف!");
+    const name = nameInput ? nameInput.value.trim() : "";
+    const phone = phoneInput ? phoneInput.value.trim() : "";
+    const address = addressInput ? addressInput.value.trim() : "";
+    const note = noteInput ? noteInput.value.trim() : "";
+
+    // التحقق الإجباري من الاسم، رقم الهاتف، والعنوان
+    if (!name || !phone || !address) {
+        alert("يرجى إكمال جميع الحقول المطلوبة (الاسم، رقم الهاتف، والعنوان)!");
         return;
     }
 
-    let message = `طلب جديد من المنيو\n\n`;
+    let message = `طلب جديد من المنيو 🍔\n\n`;
     message += `اسم الزبون: ${name}\n`;
     message += `رقم الهاتف: ${phone}\n`;
+    message += `العنوان: ${address}\n`;
     if (note) message += `ملاحظات: ${note}\n`;
     message += `\nالطلبات:\n`;
 
@@ -121,7 +167,7 @@ function sendOrderToWhatsApp() {
 
     message += `\nالمجموع الكلي: ${total.toLocaleString()} د.ع`;
 
-    const whatsappNumber = "9647700000000"; 
+    const whatsappNumber = "9647700000000"; // استبدله برقم الواتساب الخاص بك
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }

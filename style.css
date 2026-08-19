@@ -341,6 +341,43 @@ section {
     border-color: #d63031;
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.required-star {
+    color: red;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* الحواف الدائرية مثل الصورة */
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* تأثير عند الضغط للكتابة */
+.form-group input:focus {
+    border-color: #d63031; 
+}
+
 /* ==========================================================================
    6. الفوتر الاحترافي (Footer - LTR Direction)
    ========================================================================== */
