@@ -174,39 +174,6 @@ section {
     color: white;
 }
 
-/* الأيقونة العائمة للصعود للأعلى */
-.floating-scroll-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #d63031;
-    /* أحمر متناسق مع الهيدر */
-    color: #ffffff;
-    border: 2px solid #f1c40f;
-    /* إطار ذهبي متناسق مع الأزرار */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-
-    /* إخفاء الزر افتراضياً مع إضافة حركة تنقل ناعمة */
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-/* حالة ظهور الزر عند التمرير للأسفل */
-.floating-scroll-btn.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 .floating-scroll-btn:hover {
     background-color: #b22222;
     transform: translateY(-3px);
@@ -272,8 +239,7 @@ section {
 .general-note-container label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
-}
+    margin-bottom: 5px; }
 
 .general-note-container textarea {
     width: 100%;
